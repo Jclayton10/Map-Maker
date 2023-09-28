@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [System.Serializable]
 public struct KeyCodeTilePairs
@@ -111,5 +112,10 @@ public class MapGenerator : MonoBehaviour
                 tiles[new Vector2(i, f)].UpdateTile(selectedTileType);
             }
         }
+    }
+
+    public void LoadScene(string sceneName)
+    {
+        SceneManager.LoadScene(sceneName);
     }
 }

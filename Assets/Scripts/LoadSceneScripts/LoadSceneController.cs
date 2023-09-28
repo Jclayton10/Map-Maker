@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class LoadSceneController : MonoBehaviour
@@ -25,5 +26,10 @@ public class LoadSceneController : MonoBehaviour
             MapPrefabScript newMap = Instantiate(mapPrefab, contentHolder).GetComponent<MapPrefabScript>();
             newMap.InitializeMap(file);
         }
+    }
+
+    public void LoadScene(string sceneName)
+    {
+        SceneManager.LoadScene(sceneName);
     }
 }
