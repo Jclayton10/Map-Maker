@@ -2,7 +2,10 @@ using UnityEngine;
 
 public class Tile : MonoBehaviour
 {
+
     [SerializeField] GameObject highlight;
+
+    public Vector2 loc;
 
     public TileSO tileRef;
 
@@ -30,6 +33,17 @@ public class Tile : MonoBehaviour
 
     private void OnMouseDown()
     {
-        UpdateTile(MapGenerator.mapGenerator.selectedTileType);
+        MapGenerator.mapGenerator.mouseDown = true;
+        MapGenerator.mapGenerator.startTile = loc;
+    }
+
+    private void OnMouseUp()
+    {
+        MapGenerator.mapGenerator.mouseDown = false;
+        MapGenerator.mapGenerator.MassUpdateTiles();
+    }
+    private void OnMouseEnter()
+    {
+        MapGenerator.mapGenerator.endTile = loc;
     }
 }
