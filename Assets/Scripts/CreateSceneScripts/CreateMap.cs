@@ -12,6 +12,6 @@ public class CreateMap : MonoBehaviour
         PlayerPrefs.SetInt("MapHeight", Convert.ToInt32(height.text));
 
         //Should load the map editor
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene("MapEditor");
     }
 }

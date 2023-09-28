@@ -11,7 +11,7 @@ public class Tile : MonoBehaviour
         GetComponent<SpriteRenderer>().sprite = tileRef.texture;
     }
 
-    private void UpdateTile(TileSO newTile)
+    public void UpdateTile(TileSO newTile)
     {
         tileRef = newTile;
         Debug.Log(tileRef);

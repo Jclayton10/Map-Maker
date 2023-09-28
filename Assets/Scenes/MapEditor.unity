@@ -152,6 +152,7 @@ MonoBehaviour:
   width: 0
   height: 0
   tilePrefab: {fileID: 8182155488887948014, guid: 31fd063d7d0ca63419ff3d35e1cd118f, type: 3}
+  texTmp: {fileID: 0}
   selectedTileType: {fileID: 11400000, guid: ed3031545cc0ada459fafee65172a8d2, type: 2}
 --- !u!4 &581453
 Transform:
@@ -1954,9 +1955,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   links:
-  - color: {r: 0.3063573, g: 0.6698113, b: 0.2748754, a: 1}
+  - color: {r: 0.3058824, g: 0.671, b: 0.275, a: 1}
     tileSO: {fileID: 11400000, guid: 95781ba0e9121444cb90d47a26bc9d95, type: 2}
-  - color: {r: 0.26539695, g: 0.45645946, b: 0.7924528, a: 1}
+  - color: {r: 0.2666667, g: 0.455, b: 0.792, a: 1}
     tileSO: {fileID: 11400000, guid: ed3031545cc0ada459fafee65172a8d2, type: 2}
   SaveObject: {fileID: 1469975890}
   textureShow: {fileID: 598916262}

@@ -16,7 +16,7 @@ public class MapSaver : MonoBehaviour
     //Singleton
     public static MapSaver mapSaver;
 
-    [SerializeField] List<ColorLink> links;
+    public List<ColorLink> links;
     [SerializeField] GameObject SaveObject;
     [SerializeField] Image textureShow;
     [SerializeField] Texture2D texture;
@@ -40,7 +40,7 @@ public class MapSaver : MonoBehaviour
 
     public void GenerateTexture2D()
     {
-        texture = new Texture2D(MapGenerator.mapGenerator.width, MapGenerator.mapGenerator.height);
+        texture = new Texture2D(MapGenerator.mapGenerator.width, MapGenerator.mapGenerator.height, TextureFormat.RGBAFloat, false);
 
         for(int i = 0; i<MapGenerator.mapGenerator.width; i++)
         {
@@ -62,7 +62,6 @@ public class MapSaver : MonoBehaviour
         Sprite textureSprite = Sprite.Create(texture, new Rect(0.0f, 0.0f, texture.width, texture.height), new Vector2(texture.width / 2.0f, texture.height / 2), (1.0f/32.0f));
 
         textureShow.sprite = textureSprite;
-        Debug.Log($"Sprite Dimensions: {textureShow.sprite.texture.width} x {textureShow.sprite.texture.height}");
     }
 
     public void Save()
@@ -70,9 +69,9 @@ public class MapSaver : MonoBehaviour
         if (!Directory.Exists(Application.persistentDataPath + "/MapSaves"))
             Directory.CreateDirectory(Application.persistentDataPath + "/MapSaves");
 
-        if (fileName.text == "") return;
+        if (fileName.text == "") { return; }
 
-        string path = Application.persistentDataPath + "/MapSaves/" + fileName.text;
+        string path = Application.persistentDataPath + "/MapSaves/" + fileName.text + ".save";
 
         File.WriteAllBytes(path, texture.EncodeToPNG());
         Debug.Log(path);
